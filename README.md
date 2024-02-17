@@ -8,3 +8,5 @@ Agora estou estudando também pela plataforma de ensino da __Exercism__ e adicio
 Link da playlist: https://www.youtube.com/playlist?list=PLCKpcjBB_VlBsxJ9IseNxFllf-UFEXOdg
 
 [Exercism](https://exercism.org/)
+
+https://gobyexample.com/
