@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	cards "go-studies/card_tricks"
 )
 
 func main() {
-	fmt.Printf("%.1f", 23.7834298)
+	slice := []int{3, 2, 6, 4, 8}
+	newCards := cards.RemoveItem(slice, 2)
+	fmt.Println(newCards)
 }
