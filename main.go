@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	cards "go-studies/card_tricks"
+	"go-studies/interest"
 )
 
 func main() {
-	slice := []int{3, 2, 6, 4, 8}
-	newCards := cards.RemoveItem(slice, 2)
-	fmt.Println(newCards)
+	n := interest.YearsBeforeDesiredBalance(200.75, 214.88)
+	fmt.Println(n)
 }
