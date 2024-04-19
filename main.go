@@ -1,11 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"go-studies/interest"
-)
+import pr "go-studies/alura-go-studies"
 
 func main() {
-	n := interest.YearsBeforeDesiredBalance(200.75, 214.88)
-	fmt.Println(n)
+	pr.ProjetoExec()
 }
