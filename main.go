@@ -1,7 +1,7 @@
 package main
 
-import pr "go-studies/alura-go-studies"
+import alura_projeto_1 "go-studies/alura-go-studies"
 
 func main() {
-	pr.ProjetoExec()
+	alura_projeto_1.ProjetoExec()
 }

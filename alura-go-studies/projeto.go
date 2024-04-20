@@ -4,6 +4,12 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
+)
+
+const (
+	monitoringCycles int           = 5
+	monitoringTime   time.Duration = 2 * time.Second
 )
 
 func ProjetoExec() {
@@ -46,8 +52,24 @@ func readOption() int {
 
 func startMonitoring() {
 	fmt.Println("Monitorando...")
-	site := "http://localhost:3001/customers"
+	sites, err := ReadFiles()
 
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	for i := range monitoringCycles {
+		fmt.Println("Ciclo", i+1, "de monitoramento")
+		for _, site := range sites {
+			siteTracker(site)
+		}
+		time.Sleep(monitoringTime)
+		fmt.Println()
+	}
+}
+
+func siteTracker(site string) {
 	resp, err := http.Get(site)
 
 	if err != nil {
