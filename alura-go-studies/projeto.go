@@ -22,6 +22,7 @@ func ProjetoExec() {
 			startMonitoring()
 		case 2:
 			fmt.Println("Exibindo Logs...")
+			showLog()
 		case 0:
 			fmt.Println("Saindo do programa...")
 			os.Exit(0)
@@ -64,6 +65,7 @@ func startMonitoring() {
 		for _, site := range sites {
 			siteTracker(site)
 		}
+		addTimeToLog()
 		time.Sleep(monitoringTime)
 		fmt.Println()
 	}
@@ -78,7 +80,9 @@ func siteTracker(site string) {
 
 	if resp.StatusCode == 200 {
 		fmt.Println("Site:", site, "foi carregado com sucesso!")
+		registerLog(site, true)
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Status Code:", resp.StatusCode)
+		registerLog(site, false)
 	}
 }
