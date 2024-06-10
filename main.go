@@ -3,11 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	var p *int
+	rect := Rect{Width: 5, Height: 2}
+	rect.SetHeight(3)
+	fmt.Println(rect.ShowSize())
+}
 
-	a := 45
+type Rect struct {
+	Width, Height int
+}
 
-	p = &a
+func (rect Rect) ShowSize() int {
+	return rect.Height * rect.Width
+}
 
-	fmt.Println(*p)
+func (rect *Rect) SetHeight(height int) {
+	rect.Height = height
 }
